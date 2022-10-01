@@ -13,6 +13,9 @@ public class Main {
         int n = 0;
         int choice = 6;
         int id = 0;
+        int editId = 0;
+        int deleteId = 0;
+        int nCopy = 0;
         EmployeeManager manager = new EmployeeManager();
 
 
@@ -31,8 +34,16 @@ public class Main {
                         if(n==0){
                             control = false;
                             n = sc.nextInt();
+                            manager.createArr(n);
+                            nCopy = n;
+
                         }
-                        else n+= sc.nextInt();
+                        else {
+                            nCopy =  sc.nextInt();
+                            n += nCopy;
+                            manager.addArr(n);
+
+                        }
 
 
                     } catch (Exception e) {
@@ -43,9 +54,9 @@ public class Main {
                     }
                 } while (control);
 
-                manager.createArr(n);
 
-                for (int i = id; i < n; i++) {
+
+                for (int i = n-nCopy;i<n;i++) {
 
                     System.out.println("Employee number  " + (i+1));
                     System.out.println("Enter name ::");
@@ -70,19 +81,20 @@ public class Main {
             }
             case 2: {
 
-                if(id!=0)manager.show(id);
-                else manager.show(n);
+
+                 manager.show(n);
 
                 choice = 6;
                 break;
             }
             case 3: {
                 manager.show(n);
+
                 do{
                     System.out.println("Enter the id of the employee that you want to edit :: ");
                     try {
                         control = false;
-                        id = sc.nextInt();
+                        editId = sc.nextInt();
 
                     } catch (Exception e) {
                         sc.next();
@@ -92,7 +104,7 @@ public class Main {
                     }
             } while (control);
 
-                System.out.println("Employee number  " + id);
+                System.out.println("Employee number  " + editId);
                 System.out.println("Enter name ::");
 
                 String name = sc.next();
@@ -104,7 +116,7 @@ public class Main {
                 String gen = sc.next();
 
 
-                manager.update(name, surname, gen, id-1);
+                manager.update(name, surname, gen, editId-1);
 
 
 
@@ -113,8 +125,7 @@ public class Main {
 
             }
             case 4:{
-
-
+                manager.show(n);
                 do{
                     System.out.println("Enter the id of the employee that you want to delete :: ");
                     try {
@@ -129,8 +140,9 @@ public class Main {
                     }
                 } while (control);
 
-                manager.delete(id-1);
-                n--;
+                    manager.delete(id-1,n);
+                    n--;
+
 
                 choice = 6;
                 break;
@@ -170,18 +182,6 @@ public class Main {
 
 
         }}
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
