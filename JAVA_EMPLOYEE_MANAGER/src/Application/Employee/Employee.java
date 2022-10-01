@@ -27,4 +27,23 @@ public class Employee {
 
     }
 
+    public void setGender(String gen){
+        this.gen = gen;
+    }
+
+    public String getGender(){
+        return this.gen;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+
+        return this.id;
+
+    }
+
+
 }
