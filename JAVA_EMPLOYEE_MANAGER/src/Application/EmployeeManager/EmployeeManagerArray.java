@@ -1,8 +1,8 @@
-package Application.Functions;
+package Application.EmployeeManager;
 
 import Application.Employee.Employee;
 
-public class EmployeeManager extends Employee implements EmployeeInterface{
+public class EmployeeManagerArray extends Employee implements EmployeeInterface{
 
     private Employee[] employees;
 

@@ -1,4 +1,4 @@
-package Application.Functions;
+package Application.EmployeeManager;
 
 public  interface EmployeeInterface {
 
