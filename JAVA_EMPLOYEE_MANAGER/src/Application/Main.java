@@ -1,6 +1,6 @@
 package Application;
 
-import Application.Employee.Employee;
+
 import Application.Functions.EmployeeManager;
 
 import java.util.Scanner;
@@ -14,7 +14,6 @@ public class Main {
         int choice = 6;
         int id = 0;
         int editId = 0;
-        int deleteId = 0;
         int nCopy = 0;
         EmployeeManager manager = new EmployeeManager();
 
