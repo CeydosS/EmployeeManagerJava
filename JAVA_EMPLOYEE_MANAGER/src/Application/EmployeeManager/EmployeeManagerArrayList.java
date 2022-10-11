@@ -3,10 +3,11 @@ package Application.EmployeeManager;
 import Application.Employee.Employee;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeManagerArrayList extends Employee implements EmployeeInterface {
 
-        private ArrayList<Employee> employees = new ArrayList<Employee>();
+        private List<Employee> employees = new ArrayList<>();
 
         public void create(String name,String surname,String gen,int id){
 
